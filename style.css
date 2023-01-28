@@ -1,0 +1,228 @@
+
+html,body {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #938f8f;
+    line-height: 1.3rem;
+    letter-spacing: .5px; 
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.footer-card {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    margin-top: calc(45vh - 191.2px);
+}
+
+.footer-card::before {
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 1px;
+    background: #938f8f;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-card {
+    height: 60px;
+    box-shadow: -3px 6px 20px -.3em rgba(0,0,0,.2);
+    border-radius: 4px;
+    margin-bottom: 3.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-card > input {
+    display: none;
+}
+
+.nav-card > input[type=checkbox] + label + .nav-card-menu {
+    visibility: hidden;
+    background-color: rgba(0,0,0,.65);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: visibility 275ms cubic-bezier(.65,.05,.36,1);
+}
+
+.nav-card > input[type=checkbox]:checked + label + .nav-card-menu {
+    visibility: visible;
+}
+
+.nav-card > input[type=checkbox] + label + .nav-card-menu > .nav-card-menu-container {
+    background-color: #fff;/*#d0d0d0;*/
+    width: 0;
+    height: 100%;
+    /* position: fixed; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+    box-shadow: -3px 6px 20px -.3em rgba(0,0,0,.2);
+    border-radius: 4px;
+    z-index: 1000;
+    transition: width 275ms cubic-bezier(.65,.05,.36,1);
+}
+
+.nav-card > input[type=checkbox]:checked + label + .nav-card-menu > .nav-card-menu-container {
+    width: 345px;
+}
+
+.nav-card-menu-container > label {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+}
+
+.nav-card-menu-container > label::before {
+    content: '';
+    position: absolute;
+    border-top: 1px solid red;
+    width: 13px;
+    transform: rotate(45deg);
+    transform-origin: 0% 0%;
+    top: 6px;
+    right: 2px;
+}
+
+.nav-card-menu-container > label::after {
+    content: '';
+    position: absolute;
+    border-top: 1px solid red;
+    width: 13px;
+    transform: rotate(-45deg);
+    transform-origin: 0% 0%;
+    top: 15px;
+    right: 3px;
+}
+
+.nav-card > input + label {
+    position: relative;
+    width: 1.5rem;
+    height: .5px;
+    background: #938f8f;
+    align-self: center;
+    padding: .7px;
+    margin: 0 12px;
+    border: none;
+    cursor: pointer;
+}
+.nav-card > input + label::before {
+    content: '';
+    width: 1.5rem;
+    height: .5px;
+    background: #938f8f;
+    align-self: center;
+    padding: .7px;
+    margin: 0 12px;
+    border: none;
+    position: absolute;
+    top: -8px;
+    left: -12px;
+    cursor: pointer;
+}
+.nav-card > input + label::after {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: .7px;
+    margin: 0 12px;
+    position: absolute;
+    bottom: -8px;
+    left: -12px;
+    cursor: pointer;
+    border-bottom: 2px solid #938f8f;
+}
+
+.nav-card-menu__route {
+    position: relative;
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+/*
+.nav-card-menu__route::before {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+} */
+
+.card-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.card-template.card-group-1-2 {
+    flex: 1 0 40%;
+}
+
+.card-template.card-group-1-1 {
+    flex: 1 0 90%;
+}
+
+.card-template {
+    position: relative;
+    height: inherit;
+    width: 90%;
+    margin: 1rem .5rem;
+    padding: 1rem;
+    box-shadow: -3px 6px 20px -.3em rgba(0,0,0,.2);
+    border-radius: 4px;
+}
+
+@media (min-width: 960px) {
+    .card-group {
+        max-width: 900px !important;
+        margin: 0 auto;
+    }
+    
+}
+
+.card-template__body > p {
+    text-align: justify;
+    text-indent: 16px;
+}
+
+.card-template__title > span {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.card-template__title > span::before {
+    content: '';
+    border-radius: 50%;
+    background: #938f8f;
+    display: inline-flex;
+    position: relative;
+    width: 5px;
+    height: 5px;
+    align-self: center;
+    margin-right: .75rem;
+}
